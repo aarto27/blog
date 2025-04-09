@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 const Blog = () => {
   const [blog, setBlog] = useState({ title: "", content: "" });
