@@ -1,18 +1,24 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const Blog = () => {
   const [blog, setBlog] = useState({ title: "", content: "" });
   const [blogPosts, setBlogPosts] = useState([]);
+  const isFirstRender = useRef(true); 
 
   useEffect(() => {
     const storedPosts = localStorage.getItem("blogPosts");
     if (storedPosts) {
-      setBlogPosts(JSON.parse(storedPosts)); 
+      setBlogPosts(JSON.parse(storedPosts));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("blogPosts", JSON.stringify(blogPosts)); 
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return; 
+    }
+
+    localStorage.setItem("blogPosts", JSON.stringify(blogPosts));
   }, [blogPosts]);
 
   const handlePost = (e) => {
@@ -24,8 +30,6 @@ const Blog = () => {
     setBlogPosts(updatedPosts);
     setBlog({ title: "", content: "" });
   };
-
-
 
   return (
     <div className="blog">
