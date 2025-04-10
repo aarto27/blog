@@ -32,7 +32,7 @@ export const Input = () => {
         onChange={handleChange}
         placeholder="15-25"
       />
-      <p style={{ color: "red" }}>{error}</p>
+       <p style={{ color: "red" }}>{error}</p>
     </div>
   );
 };
