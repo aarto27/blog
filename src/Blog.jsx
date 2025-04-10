@@ -37,6 +37,7 @@ const Blog = () => {
       <form onSubmit={handlePost}>
         <input
           type="text"
+          id="title"
           placeholder="Title"
           value={blog.title}
           onChange={(e) => setBlog({ ...blog, title: e.target.value })}
@@ -47,13 +48,14 @@ const Blog = () => {
         <textarea
           placeholder="Write Your Blog Here"
           cols="30"
+          id="content"
           rows="10"
           value={blog.content}
           onChange={(e) => setBlog({ ...blog, content: e.target.value })}
         ></textarea>
         <br />
         <br />
-        <button type="submit">Post</button>
+        <button type="submit" id="post">Post</button>
       </form>
       <div className="blogContent">
         {blogPosts.map((post, index) => (
