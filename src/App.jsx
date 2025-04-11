@@ -9,8 +9,8 @@ function App() {
 
   return (
     <>
-      {/* <Blog /> */}
-      <Input />
+      <Blog />
+      {/* <Input /> */}
       {/* <Search /> */}
     </>
   )

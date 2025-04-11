@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
+import BlogPost from "./BlogPost";
 
 const Blog = () => {
   const [blog, setBlog] = useState({ title: "", content: "" });
   const [blogPosts, setBlogPosts] = useState([]);
-  const isFirstRender = useRef(true); 
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
     const storedPosts = localStorage.getItem("blogPosts");
@@ -15,15 +16,13 @@ const Blog = () => {
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
-      return; 
+      return;
     }
-
     localStorage.setItem("blogPosts", JSON.stringify(blogPosts));
   }, [blogPosts]);
 
   const handlePost = (e) => {
     e.preventDefault();
-
     if (blog.title.trim() === "" || blog.content.trim() === "") return;
 
     const updatedPosts = [...blogPosts, blog];
@@ -57,16 +56,12 @@ const Blog = () => {
         <br />
         <button type="submit" id="post">Post</button>
       </form>
-      <div className="blogContent">
-        {blogPosts.map((post, index) => (
-          <div className="blogPost" key={index}>
-            <h2>{post.title}</h2>
-            <p>{post.content}</p>
-          </div>
-        ))}
-      </div>
+
+      {/* Pass blogPosts to BlogPost */}
+      <BlogPost posts={blogPosts} />
     </div>
   );
 };
 
 export default Blog;
+  
