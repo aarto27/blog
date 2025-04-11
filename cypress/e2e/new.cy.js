@@ -29,5 +29,7 @@ describe('login', () => {
 
         cy.wait(1000);
         cy.get("#post").click();
+        cy.wait(3000);
+        cy.get(".delete").eq(0).click("");
     });
 });

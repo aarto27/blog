@@ -1,12 +1,10 @@
-import React,{useState} from "react";
+import React from "react";
 
 const BlogPost = ({ posts, setBlog }) => {
     
     
 
     const handleDelete = (index) => {
-        console.log("Your index is:",index);
-        console.log(posts);
       const ab = index;
         const newpost = posts.filter((item, index)=> ab !== index);
         setBlog(newpost);
@@ -18,7 +16,7 @@ const BlogPost = ({ posts, setBlog }) => {
       <div className="blogContent">
         {posts.map((post, index) => (
           <div className="blogPost" key={index}>
-           <i onClick={()=>handleDelete(index)} className="fa-solid fa-trash"></i>
+           <i onClick={()=>handleDelete(index)} className="fa-solid fa-trash delete"></i>
             <h2>{post.title}</h2>
             <p>{post.content}</p>
           </div>
