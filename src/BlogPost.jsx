@@ -5,7 +5,7 @@ const BlogPost = ({ posts }) => {
 
     const handleDelete = (index) => {
         console.log("Your index is:",index);
-        const newpost = blogPosts.filter((e,i)=>{
+        const newpost = blogPosts.filter((i)=>{
             return i !== index;
         });
         setBlogPosts(newpost);
