@@ -1,15 +1,15 @@
 import React,{useState} from "react";
 
-const BlogPost = ({ posts }) => {
-    const [blogPosts, setBlogPosts] = useState(posts);
+const BlogPost = ({ posts, setBlog }) => {
+    
+    
 
     const handleDelete = (index) => {
         console.log("Your index is:",index);
-        const newpost = blogPosts.filter((i)=>{
-            return i !== index;
-        });
-        setBlogPosts(newpost);
-        console.log(handleDelete);
+        console.log(posts);
+      const ab = index;
+        const newpost = posts.filter((item, index)=> ab !== index);
+        setBlog(newpost);
       };
 
 

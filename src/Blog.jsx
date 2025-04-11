@@ -56,12 +56,11 @@ const Blog = () => {
         <br />
         <button type="submit" id="post">Post</button>
       </form>
-
+    
       {/* Pass blogPosts to BlogPost */}
-      <BlogPost posts={blogPosts} />
+      <BlogPost posts={blogPosts}  setBlog={setBlogPosts}/>
     </div>
   );
 };
 
 export default Blog;
-  
