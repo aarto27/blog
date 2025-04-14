@@ -1,4 +1,5 @@
 import React from "react";
+import LikeBtn from "./LikeBtn";
 
 const BlogPost = ({ posts, setBlog }) => {
     
@@ -16,7 +17,10 @@ const BlogPost = ({ posts, setBlog }) => {
       <div className="blogContent">
         {posts.map((post, index) => (
           <div className="blogPost" key={index}>
+            <div className="header">
            <i onClick={()=>handleDelete(index)} className="fa-solid fa-trash delete"></i>
+           <LikeBtn />
+           </div>
             <h2>{post.title}</h2>
             <p>{post.content}</p>
           </div>
