@@ -19,9 +19,9 @@ const BlogPost = ({ posts, setBlog }) => {
           <div className="blogPost" key={index}>
             <div className="header">
            <i onClick={()=>handleDelete(index)} className="fa-solid fa-trash delete"></i>
+            <h2>{post.title}</h2>
            <LikeBtn />
            </div>
-            <h2>{post.title}</h2>
             <p>{post.content}</p>
           </div>
         ))}
