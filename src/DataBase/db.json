@@ -1,0 +1,28 @@
+{
+  "blogs": [
+    {
+      "id": "1",
+      "title": "a title",
+      "content": "a content",
+      "likes": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "content": "another content",
+      "likes": 200
+    },
+    {
+      "id": "acfb",
+      "title": "assssssss",
+      "content": "sassssssssss"
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "name": "John",
+      "password": "123"
+    }
+  ]
+}

@@ -1,17 +1,29 @@
 import { useState } from 'react'
-
 import './App.css'
-import { Input } from './Input'
-import Search from './Search'
-import Blog from './Blog'
+import Blog from './Input/Blog'
+import SignUp from './FrontPage/SignUp'
+import Login from './FrontPage/Login'
+import { createBrowserRouter , RouterProvider } from 'react-router-dom'
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <SignUp />,
+    },
+    {
+      path: '/login',
+      element: <Login />,
+    },
+    {
+      path: '/blog',
+      element: <Blog />,
+    }
+  ])
 
   return (
     <>
-      <Blog />
-      {/* <Input /> */}
-      {/* <Search /> */}
+    <RouterProvider router={router} />
     </>
   )
 }
