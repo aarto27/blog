@@ -32,7 +32,6 @@ const Blog = () => {
 
   return (
     <div className="blog">
-      <h1>Blog</h1>
       <form onSubmit={handlePost}>
         <input
           type="text"
