@@ -1,21 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Login.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
+  const [userData, setUserData] = useState([]);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    email: "",
-    password: ""
+    name: "",
+    password: "",
   });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/user");
+        setUserData(response.data);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleClick = (e) => {
     e.preventDefault();
-    navigate("/blog");
-    setFormData({
-      email: '',
-      password: ''
-    });
+
+    const userExists = userData.find(
+      (user) =>
+        user.name.toLowerCase().trim() === formData.name.toLowerCase().trim() &&
+        user.password === formData.password
+    );
+
+    if (userExists) {
+      alert("Login successful!");
+      navigate("/blog");
+      setFormData({ name: "", password: "" });
+    } else {
+      alert("Invalid username or password.");
+    }
   };
 
   return (
@@ -25,23 +49,21 @@ const Login = () => {
         <label>Username:</label>
         <input
           type="text"
-          name="email"
-          id="email"
-          value={formData.email}
-          onChange={(e) => {
-            setFormData({ ...formData, email: e.target.value });
-          }}
+          name="name"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          required
         />
         <br />
         <label>Password:</label>
         <input
           type="password"
           name="password"
-          id="password"
           value={formData.password}
-          onChange={(e) => {
-            setFormData({ ...formData, password: e.target.value });
-          }}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
+          required
         />
         <br />
         <button type="submit">Login</button>

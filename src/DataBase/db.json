@@ -1,27 +1,19 @@
 {
-  "blogs": [
-    {
-      "id": "1",
-      "title": "a title",
-      "content": "a content",
-      "likes": 100
-    },
-    {
-      "id": "2",
-      "title": "another title",
-      "content": "another content",
-      "likes": 200
-    },
-    {
-      "id": "acfb",
-      "title": "assssssss",
-      "content": "sassssssssss"
-    }
-  ],
+  "blogs": [],
   "user": [
     {
       "id": "1",
       "name": "John",
+      "password": "123"
+    },
+    {
+      "id": "d665",
+      "name": "Aarto ",
+      "password": "123"
+    },
+    {
+      "id": "d3a8",
+      "name": "Tanu",
       "password": "123"
     }
   ]

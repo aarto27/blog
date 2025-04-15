@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import BlogPost from "../Content/BlogPost";
 import axios from "axios";
 import Header from "../Header";
+import './Blog.css'
 
 
 const Blog = () => {
@@ -11,19 +12,18 @@ const Blog = () => {
 
   const Data = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/");
+      const response = await axios.get("http://localhost:3000/blogs");
       setBlogPosts(response.data);
-      console.log(response.data);
     } catch (error) {
       console.error("Error fetching blog data:", error);
     }
   };
-  console.log(blogPosts);
   
   
-  // useEffect(() => {
-  //   Data();
-  // }, [])
+  
+  useEffect(() => {
+    Data();
+  }, [])
   
 
   // useEffect(() => {
