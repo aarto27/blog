@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
-import { useNavigate,NavLink} from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
+import axios from "axios";
 
-const Login = (props) => {
-  const {userData , setUserData } = props;
+const Login = ({ setCurrentUser }) => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    name: "",
-    password: "",
-  });
+  const [userData, setUserData] = useState([]);
+  const [formData, setFormData] = useState({ name: "", password: "" });
 
- 
-console.log("userData====>",userData);
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const res = await axios.get("http://localhost:3000/user");
+        setUserData(res.data);
+      } catch (err) {
+        console.error("Error fetching users:", err);
+      }
+    };
+    fetchUsers();
+  }, []);
 
   const handleClick = (e) => {
     e.preventDefault();
-
     const userExists = userData.find(
       (user) =>
         user.name.toLowerCase().trim() === formData.name.toLowerCase().trim() &&
@@ -24,11 +30,13 @@ console.log("userData====>",userData);
 
     if (userExists) {
       alert("Login successful!");
+      setCurrentUser(userExists);
       navigate("/blog");
-      setFormData({ name: "", password: "" });
     } else {
       alert("Invalid username or password.");
     }
+
+    setFormData({ name: "", password: "" });
   };
 
   return (
@@ -49,14 +57,14 @@ console.log("userData====>",userData);
           type="password"
           name="password"
           value={formData.password}
-          onChange={(e) =>
-            setFormData({ ...formData, password: e.target.value })
-          }
+          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           required
         />
         <br />
         <button type="submit">Login</button>
-        <p>Don't have an account<NavLink to="/">Sign Up</NavLink></p>
+        <p>
+          Don't have an account? <NavLink to="/">Sign Up</NavLink>
+        </p>
       </form>
     </div>
   );
