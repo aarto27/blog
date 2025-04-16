@@ -1,28 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
 import { useNavigate,NavLink} from "react-router-dom";
-import axios from "axios";
 
-const Login = () => {
-  const [userData, setUserData] = useState([]);
+const Login = ({userData , setUserData}) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     password: "",
   });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://localhost:3000/user");
-        setUserData(response.data);
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+console.log("userData====>",userData);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -67,7 +54,7 @@ const Login = () => {
         />
         <br />
         <button type="submit">Login</button>
-        <p>Don't have an account<NavLink to="/">Sign U</NavLink></p>
+        <p>Don't have an account<NavLink to="/">Sign Up</NavLink></p>
       </form>
     </div>
   );

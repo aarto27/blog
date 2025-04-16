@@ -5,25 +5,11 @@ import Header from "../Header";
 import './Blog.css'
 
 
-const Blog = () => {
+const Blog = ({blogData}) => {
   const [blog, setBlog] = useState({ title: "", content: "" });
-  const [blogPosts, setBlogPosts] = useState([]);
   const isFirstRender = useRef(true);
 
-  const Data = async () => {
-    try {
-      const response = await axios.get("http://localhost:3000/blogs");
-      setBlogPosts(response.data);
-    } catch (error) {
-      console.error("Error fetching blog data:", error);
-    }
-  };
-  
-  
-  
-  useEffect(() => {
-    Data();
-  }, [])
+  console.log(blogData);
 
   const handlePost = async (e) => {
     e.preventDefault();

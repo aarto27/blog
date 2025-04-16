@@ -18,7 +18,6 @@ const Header = () => {
     fetchData();
   }, []);
   
-  console.log(user);
   const handleLogout = () => {
     navigate("/login");
   };
