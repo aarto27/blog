@@ -3,7 +3,7 @@ import LikeBtn from "./LikeBtn";
 import axios from "axios";
 
 const BlogPost = ({ posts, setBlog }) => {
-    
+  
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/blogs/${id}`);

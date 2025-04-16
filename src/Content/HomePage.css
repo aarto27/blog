@@ -1,0 +1,90 @@
+.home-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #fdfbfb, #ebedee);
+  padding: 2rem;
+  min-height: 100vh;
+  color: #333;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.hero h1 span {
+  color: #0077cc;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  color: #555;
+}
+
+.go-blog-btn {
+  background-color: #0077cc;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.go-blog-btn:hover {
+  background-color: #005fa3;
+}
+
+.your-blogs {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.your-blogs h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.empty-msg {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
+
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.blog-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card h3 {
+  margin-bottom: 0.5rem;
+  color: #1c1c1c;
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1rem;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
 const Header = ({ currentUser }) => {
   const navigate = useNavigate();
@@ -10,10 +10,13 @@ const Header = ({ currentUser }) => {
   
 
   return (  
+    <>
     <div className="Header">
       <h1>Hello {currentUser?.name || "Guest"}</h1>
       <button onClick={handleLogout}>Logout</button>
     </div>
+    <NavLink to="home">Home</NavLink>
+    </>
   );
 };
 
