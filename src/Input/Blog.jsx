@@ -5,7 +5,8 @@ import Header from "../Header";
 import './Blog.css'
 
 
-const Blog = ({blogData}) => {
+const Blog = (props) => {
+  const {blogData , setBlogData, userData , setUserData} = props;
   const [blog, setBlog] = useState({ title: "", content: "" });
   const isFirstRender = useRef(true);
 
@@ -17,7 +18,7 @@ const Blog = ({blogData}) => {
   
     try {
       const response = await axios.post("http://localhost:3000/blogs", blog);
-      setBlogPosts([...blogPosts, response.data]);
+      setBlogData([...blogData, response.data]);
       setBlog({ title: "", content: "" });
     } catch (error) {
       console.error("Error posting blog:", error);
@@ -51,7 +52,7 @@ const Blog = ({blogData}) => {
         <br />
         <button type="submit" id="post">Post</button>
       </form>
-      <BlogPost  posts={blogPosts}  setBlog={setBlogPosts}/>
+      <BlogPost  posts={blogData}  setBlog={setBlogData}/>
     </div>
   );
 };

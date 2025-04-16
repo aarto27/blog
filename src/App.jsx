@@ -9,7 +9,7 @@ import axios from "axios";
 function App() {
   const [blogData, setBlogData] = useState([]);
   const [userData, setUserData] = useState([]);
-
+  
   const blog = async () => {
     try {
       const response = await axios.get("http://localhost:3000/blogs");
@@ -39,7 +39,8 @@ function App() {
     },
     {
       path: "/login",
-      element: <Login userData={userData} setUserData={setUserData} />,
+      element: <Login 
+      userData={userData} setUserData={setUserData} />,
     },
     {
       path: "/blog",
