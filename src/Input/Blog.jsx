@@ -4,7 +4,8 @@ import axios from "axios";
 import Header from "../Header";
 import "./Blog.css";
 
-const Blog = ({ currentUser }) => {
+const Blog = (props) => {
+  const {currentUser}= props;
   const [blogData, setBlogData] = useState([]);
   const [blog, setBlog] = useState({ title: "", content: "" });
 
@@ -32,7 +33,7 @@ const Blog = ({ currentUser }) => {
       console.error("Error posting blog:", error);
     }
   };
-console.log("blog===>",currentUser);
+console.log("blog===>",props);
   return (
     <div className="blog">
       <Header currentUser={currentUser} />

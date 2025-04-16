@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null); 
-
+console.log("app===>",currentUser);
   const router = createBrowserRouter([
     { path: "/", element: <SignUp /> },
     { path: "/login", element: <Login setCurrentUser={setCurrentUser} /> },
