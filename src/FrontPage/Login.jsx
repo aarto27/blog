@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Login.css";
 import { useNavigate,NavLink} from "react-router-dom";
 
-const Login = ({userData , setUserData}) => {
+const Login = (props) => {
+  const {userData , setUserData } = props;
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
