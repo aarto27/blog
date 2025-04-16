@@ -34,7 +34,7 @@ const Blog = (props) => {
       console.error("Error posting blog:", error);
     }
   };
-console.log("blog===>",props);
+// console.log("blog===>",props);
   return (
     <div className="blog">
       <Header currentUser={currentUser} />
