@@ -24,22 +24,6 @@ const Blog = () => {
   useEffect(() => {
     Data();
   }, [])
-  
-
-  // useEffect(() => {
-  //   const storedPosts = localStorage.getItem("blogPosts");
-  //   if (storedPosts) {
-  //     setBlogPosts(JSON.parse(storedPosts));
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   if (isFirstRender.current) {
-  //     isFirstRender.current = false;
-  //     return;
-  //   }
-  //   localStorage.setItem("blogPosts", JSON.stringify(blogPosts));
-  // }, [blogPosts]);
 
   const handlePost = async (e) => {
     e.preventDefault();

@@ -67,7 +67,7 @@ const Login = () => {
         />
         <br />
         <button type="submit">Login</button>
-        <p>Don't have an account<NavLink to="/">Sign Up</NavLink></p>
+        <p>Don't have an account<NavLink to="/">Sign U</NavLink></p>
       </form>
     </div>
   );

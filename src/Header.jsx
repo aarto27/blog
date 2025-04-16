@@ -7,9 +7,9 @@ const Header = () => {
   const [user, setUser] = useState([]);
  
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async (id) => {
       try {
-        const response = await axios.get("http://localhost:3000/user");
+        const response = await axios.get(`http://localhost:3000/user/${id}`);
         setUser(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
