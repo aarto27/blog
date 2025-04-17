@@ -59,7 +59,7 @@ const Blog = () => {
 
       <div className="blog-section">
         <h3>Your Recent Posts</h3>
-        <BlogPost posts={blogData} setBlog={setBlogData} />
+        <BlogPost posts={blogData} setBlog={setBlogData}  currentUser={currentUser} />
       </div>
     </div>
   );

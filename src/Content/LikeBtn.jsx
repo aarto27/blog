@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-function LikeBtn() {
+function LikeBtn({ post, onLikeToggle }) {
+  const [isLiked, setIsLiked] = useState(false);
 
-    let [isLiked , setIsLiked] = useState(false);
+  const toggleLike = () => {
+    setIsLiked(!isLiked);
+    onLikeToggle(post.id, !isLiked); 
+  };
 
-    let toggle = () =>{
-        setIsLiked(!isLiked);
-    };
   return (
-    <div><p onClick={toggle}>
-        {isLiked ? "❤️ " : "♡"}
-        </p></div>
-  )
+    <div>
+      <p onClick={toggleLike}>
+        {isLiked ? "❤️ " : "♡"} Like {post.likes}
+      </p>
+    </div>
+  );
 }
 
-export default LikeBtn
+export default LikeBtn;
