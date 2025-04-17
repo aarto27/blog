@@ -40,32 +40,39 @@ const Login = ({ setCurrentUser }) => {
   };
 
   return (
-    <div className="Login">
-      <h1>Login</h1>
-      <form onSubmit={handleClick}>
-        <label>Username:</label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          required
-        />
-        <br />
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-          required
-        />
-        <br />
-        <button type="submit">Login</button>
-        <p>
-          Don't have an account? <NavLink to="/">Sign Up</NavLink>
-        </p>
-      </form>
+    <div className="login-container">
+      <div className="login-box">
+        <h1>Welcome Back 👋</h1>
+        <p>Please enter your credentials to log in</p>
+        <form onSubmit={handleClick}>
+          <div className="input-group">
+            <label htmlFor="name">Username</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your username"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              required
+            />
+          </div>
+          <div className="input-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              value={formData.password}
+              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              required
+            />
+          </div>
+          <button type="submit" className="login-btn">🚀 Login</button>
+          <p className="signup-text">
+            Don't have an account? <NavLink to="/">Sign Up</NavLink>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };

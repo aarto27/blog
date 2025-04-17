@@ -7,12 +7,12 @@ const Header = ({ currentUser }) => {
   const handleLogout = () => {
     navigate("/login");
   };
-  
+  // console.log(currentUser);
 
   return (  
     <>
     <div className="Header">
-      <h1>Hello {currentUser?.name || "Guest"}</h1>
+      <h1>Hello</h1>
       <button onClick={handleLogout}>Logout</button>
     </div>
     <NavLink to="home">Home</NavLink>
