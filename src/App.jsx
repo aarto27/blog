@@ -8,6 +8,7 @@ import HomePage from "./Content/HomePage";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   console.log("app===>", currentUser);
   const router = createBrowserRouter([
     { path: "/", element: <SignUp /> },

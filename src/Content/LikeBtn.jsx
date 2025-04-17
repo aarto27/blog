@@ -9,10 +9,8 @@ function LikeBtn({ post, onLikeToggle }) {
   };
 
   return (
-    <div>
-      <p onClick={toggleLike}>
-        {isLiked ? "❤️ " : "♡"} Like {post.likes}
-      </p>
+    <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+       <img  onClick={toggleLike} src="Heart.png" alt="like" style={{width:"40px" , height:"40px"}} /> <p> Like {post.likes}</p>
     </div>
   );
 }

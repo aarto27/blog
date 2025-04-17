@@ -1,3 +1,4 @@
+
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
@@ -11,7 +12,7 @@ export const GlobalProvider = ({ children }) => {
   const fetchBlogs = async () => {
     try {
       const res = await axios.get("http://localhost:3000/blogs");
-      setBlogData(res.data.reverse());
+      setBlogData(res.data);
     } catch (error) {
       console.error("Error fetching blog data:", error);
     }

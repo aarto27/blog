@@ -87,14 +87,19 @@
     margin-bottom: 1rem;
   }
   
-  /* Responsive */
-  @media (max-width: 600px) {
-    .blog-page {
-      padding: 1rem;
-    }
-  
-    .form-section {
-      padding: 1rem;
-    }
+  .loader {
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    font-style: italic;
+    color: #555;
+    animation: pulse 1s infinite;
   }
+  
+  @keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
+  
   

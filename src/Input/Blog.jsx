@@ -7,7 +7,8 @@ import "./Blog.css";
 
 const Blog = () => {
   const { blogData, setBlogData, currentUser } = useContext(GlobalContext); 
-  const [blog, setBlog] = useState({ title: "", content: "", author: "" });
+  const [blog, setBlog] = useState({ title: "", content: "", author: "" , likes: 0 , likedBy:[]});
+ 
 
   const handlePost = async (e) => {
     e.preventDefault();
@@ -58,7 +59,7 @@ const Blog = () => {
       </div>
 
       <div className="blog-section">
-        <h3>Your Recent Posts</h3>
+        <h3>All Recent Posts</h3>
         <BlogPost posts={blogData} setBlog={setBlogData}  currentUser={currentUser} />
       </div>
     </div>

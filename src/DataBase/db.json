@@ -4,16 +4,19 @@
       "id": "cb8b",
       "title": "React",
       "content": "This section describes the rules you need to follow to write idiomatic React code. Writing idiomatic React code can help you write well organized, safe, and composable applications. These properties make your app more resilient to changes and makes it easier to work with other developers, libraries, and tools.\n\nThese rules are known as the Rules of React. They are rules – and not just guidelines – in the sense that if they are broken, your app likely has bugs. Your code also becomes unidiomatic and harder to understand and reason about.\n\nWe strongly recommend using Strict Mode alongside React’s ESLint plugin to help your codebase follow the Rules of React. By following the Rules of React, you’ll be able to find and address these bugs and keep your application maintainable.",
-      "likes": 23,
+      "likes": "23",
       "likedBy": []
     },
     {
-      "id": "7945",
-      "title": "UseRef",
-      "content": "You can mutate the ref.current property. Unlike state, it is mutable. However, if it holds an object that is used for rendering (for example, a piece of your state), then you shouldn’t mutate that object.\nWhen you change the ref.current property, React does not re-render your component. React is not aware of when you change it because a ref is a plain JavaScript object.\nDo not write or read ref.current during rendering, except for initialization. This makes your component’s behavior unpredictable.\nIn Strict Mode, React will call your component function twice in order to help you find accidental impurities. This is development-only behavior and does not affect production. Each ref object will be created twice, but one of the versions will be discarded. If your component function is pure (as it should be), this should not affect the behavior.",
+      "id": "d478",
+      "title": "React",
+      "content": "This section describes the rules you need to follow to write idiomatic React code. Writing idiomatic React code can help you write well organized, safe, and composable applications. These properties make your app more resilient to changes and makes it easier to work with other developers, libraries, and tools.\n\nThese rules are known as the Rules of React. They are rules – and not just guidelines – in the sense that if they are broken, your app likely has bugs. Your code also becomes unidiomatic and harder to understand and reason about.\n\nWe strongly recommend using Strict Mode alongside React’s ESLint plugin to help your codebase follow the Rules of React. By following the Rules of React, you’ll be able to find and address these bugs and keep your application maintainable.",
+      "likes": 5,
       "author": "Nikita",
-      "likes": 23,
-      "likedBy": ["aarto"]
+      "likedBy": [
+        "Nikita",
+        "Aarto "
+      ]
     }
   ],
   "user": [
