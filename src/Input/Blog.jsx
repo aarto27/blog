@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
-import { GlobalContext } from "../context/GlobalContext"; // ⬅️ use the context
+import { GlobalContext } from "../context/GlobalContext"; 
 import BlogPost from "../Content/BlogPost";
 import axios from "axios";
 import Header from "../Header";
 import "./Blog.css";
 
 const Blog = () => {
-  const { blogData, setBlogData, currentUser } = useContext(GlobalContext); // ⬅️ get from context
+  const { blogData, setBlogData, currentUser } = useContext(GlobalContext); 
   const [blog, setBlog] = useState({ title: "", content: "", author: "" });
 
   const handlePost = async (e) => {

@@ -1,4 +1,3 @@
-// === Login.jsx ===
 import React, { useState, useContext } from "react";
 import "./Login.css";
 import { useNavigate, NavLink } from "react-router-dom";
@@ -20,7 +19,7 @@ const Login = () => {
 
     if (userExists) {
       alert("Login successful!");
-      setCurrentUser(userExists);  // Set user globally
+      setCurrentUser(userExists); 
       navigate("/blog");
     } else {
       alert("Invalid username or password.");
