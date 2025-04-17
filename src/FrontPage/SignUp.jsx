@@ -31,7 +31,7 @@ const SignUp = () => {
         });
 
         alert("Signup successful!");
-        navigate("/blog");
+        navigate("/login");
 
         setFormData({
           name: "",
