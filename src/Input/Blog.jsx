@@ -1,25 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
+import { GlobalContext } from "../context/GlobalContext"; // ⬅️ use the context
 import BlogPost from "../Content/BlogPost";
 import axios from "axios";
 import Header from "../Header";
 import "./Blog.css";
 
-const Blog = ({ currentUser }) => {
-  const [blogData, setBlogData] = useState([]);
+const Blog = () => {
+  const { blogData, setBlogData, currentUser } = useContext(GlobalContext); // ⬅️ get from context
   const [blog, setBlog] = useState({ title: "", content: "", author: "" });
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const response = await axios.get("http://localhost:3000/blogs");
-        setBlogData(response.data.reverse());
-      } catch (error) {
-        console.error("Error fetching blog data:", error);
-      }
-    };
-    fetchBlogs();
-  }, []);
-console.log(currentUser);
   const handlePost = async (e) => {
     e.preventDefault();
     if (!blog.title.trim() || !blog.content.trim()) return;
@@ -38,7 +27,7 @@ console.log(currentUser);
 
   return (
     <div className="blog-page">
-      <Header currentUser={currentUser} />
+      <Header />
 
       <section className="intro-section">
         <h2>Welcome to Your Blog Board, <span>{currentUser?.name || "Guest"}!</span></h2>

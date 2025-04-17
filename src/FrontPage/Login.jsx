@@ -1,27 +1,17 @@
-import React, { useState, useEffect } from "react";
+// === Login.jsx ===
+import React, { useState, useContext } from "react";
 import "./Login.css";
 import { useNavigate, NavLink } from "react-router-dom";
-import axios from "axios";
+import { GlobalContext } from "../context/GlobalContext";
 
-const Login = ({ setCurrentUser }) => {
+const Login = () => {
   const navigate = useNavigate();
-  const [userData, setUserData] = useState([]);
+  const { userData, setCurrentUser } = useContext(GlobalContext);
   const [formData, setFormData] = useState({ name: "", password: "" });
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const res = await axios.get("http://localhost:3000/user");
-        setUserData(res.data);
-      } catch (err) {
-        console.error("Error fetching users:", err);
-      }
-    };
-    fetchUsers();
-  }, []);
 
   const handleClick = (e) => {
     e.preventDefault();
+
     const userExists = userData.find(
       (user) =>
         user.name.toLowerCase().trim() === formData.name.toLowerCase().trim() &&
@@ -30,7 +20,7 @@ const Login = ({ setCurrentUser }) => {
 
     if (userExists) {
       alert("Login successful!");
-      setCurrentUser(userExists);
+      setCurrentUser(userExists);  // Set user globally
       navigate("/blog");
     } else {
       alert("Invalid username or password.");

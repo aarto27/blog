@@ -24,6 +24,7 @@ const BlogPost = ({ posts, setBlog }) => {
             <h2>{post.title}</h2>
            <LikeBtn />
            </div>
+           <p><strong>By:</strong> {post.author || "Unknown"}</p> 
             <p>{post.content}</p>
           </div>
         ))}

@@ -1,33 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { GlobalContext } from "../context/GlobalContext"; 
 import "./HomePage.css";
 
-const HomePage = ({ currentUser }) => {
+const HomePage = () => {
   const navigate = useNavigate();
+  const { blogData, currentUser } = useContext(GlobalContext); 
   const [userBlogs, setUserBlogs] = useState([]);
 
   const goToBlogs = () => navigate("/blog");
 
   useEffect(() => {
-    const fetchUserBlogs = async () => {
-      try {
-        const res = await axios.get("http://localhost:3000/blogs");
-        const filtered = res.data.filter(
-          (blog) => blog.author === currentUser?.name
-        );
-        setUserBlogs(filtered.reverse());
-      } catch (err) {
-        console.error("Error fetching user blogs:", err);
-      }
-    };
-
-    if (currentUser?.name) fetchUserBlogs();
-  }, [currentUser]);
+    if (currentUser?.name) {
+      const filtered = blogData.filter(
+        (blog) => blog.author === currentUser.name
+      );
+      setUserBlogs(filtered);
+    }
+  }, [blogData, currentUser]);
 
   return (
     <div className="home-wrapper">
-
       <section className="hero">
         <h1>Welcome back, <span>{currentUser?.name || "Guest"}</span> 👋</h1>
         <p>

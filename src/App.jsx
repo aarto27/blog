@@ -13,7 +13,7 @@ function App() {
     { path: "/", element: <SignUp /> },
     { path: "/login", element: <Login setCurrentUser={setCurrentUser} /> },
     { path: "/blog", element: <Blog currentUser={currentUser} /> },
-    {path: "blog/home",element: <HomePage />,},
+    {path: "/home",element: <HomePage />,},
   ]);
 
   return (

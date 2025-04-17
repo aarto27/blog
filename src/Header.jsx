@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
+import { GlobalContext } from "./context/GlobalContext.jsx";
 
-const Header = ({ currentUser }) => {
+const Header = () => {
   const navigate = useNavigate();
+  const { currentUser, setCurrentUser } = useContext(GlobalContext); 
 
   const handleLogout = () => {
+    setCurrentUser(null); 
     navigate("/login");
   };
-  console.log(currentUser);
 
-  return (  
+  return (
     <>
-    <div className="Header">
-      <h1>Hello</h1>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
-    <NavLink to="home">Home</NavLink>
+      <div className="Header">
+        <h1>Hello {currentUser?.name || "Guest"}</h1> 
+        <button onClick={handleLogout}>Logout</button>
+      </div>
+      <NavLink to="/home">Home</NavLink>
     </>
   );
 };
