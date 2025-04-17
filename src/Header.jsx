@@ -7,7 +7,7 @@ const Header = ({ currentUser }) => {
   const handleLogout = () => {
     navigate("/login");
   };
-  // console.log(currentUser);
+  console.log(currentUser);
 
   return (  
     <>

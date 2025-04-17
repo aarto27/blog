@@ -19,7 +19,7 @@ const Blog = ({ currentUser }) => {
     };
     fetchBlogs();
   }, []);
-
+console.log(currentUser);
   const handlePost = async (e) => {
     e.preventDefault();
     if (!blog.title.trim() || !blog.content.trim()) return;
@@ -64,7 +64,7 @@ const Blog = ({ currentUser }) => {
             onChange={(e) => setBlog({ ...blog, content: e.target.value })}
           ></textarea>
 
-          <button type="submit" id="post">🚀 Publish</button>
+          <button type="submit" id="post"> Publish</button>
         </form>
       </div>
 
