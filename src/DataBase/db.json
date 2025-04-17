@@ -30,14 +30,6 @@
         "Nikita",
         "Sanchit"
       ]
-    },
-    {
-      "id": "9ecd",
-      "title": "React",
-      "content": "useRef returns an object with a single property:\n      current: Initially, it's set to the initialValue you have passed. You can later set it to something else.\n       If you pass the ref object to React as a ref attribute to a JSX node, React will set its current property.\n      On the next renders, useRef will return the same object.\n      Caveats: You can mutate the ref.current property. Unlike state, it is mutable. However, \n      if it holds an object that is used for rendering \n      (for example, a piece of your state), then you shouldn’t mutate that object.\n      When you change the ref.current property, React does not re-render your component.\n       React is not aware of when you change it because a ref is a plain JavaScript object.\n      Do not write or read ref.current during rendering, except for initialization.\n       This makes your component’s behavior unpredictable.\n      In Strict Mode, React will call your component function twice in order to help you find accidental impurities.\n       This is development-only behavior and does not affect production.\n      Each ref object will be created twice, but one of the versions will be discarded. \n      If your component function is pure (as it should be), this should not affect the behavior.\n      ",
-      "author": "Anonymous",
-      "likes": 0,
-      "likedBy": []
     }
   ],
   "user": [
