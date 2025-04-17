@@ -15,9 +15,9 @@ const Header = () => {
     <>
       <div className="Header">
         <h1>Hello {currentUser?.name || "Guest"}</h1> 
-        <button onClick={handleLogout}>Logout</button>
+        <button id="logout" onClick={handleLogout}>Logout</button>
       </div>
-      <NavLink to="/home">Home</NavLink>
+      <NavLink id="home" to="/home">Home</NavLink>
     </>
   );
 };

@@ -29,7 +29,6 @@ const Blog = () => {
   return (
     <div className="blog-page">
       <Header />
-
       <section className="intro-section">
         <h2>Welcome to Your Blog Board, <span>{currentUser?.name || "Guest"}!</span></h2>
         <p>Share your thoughts with the world 🌍</p>

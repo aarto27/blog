@@ -56,6 +56,7 @@ const SignUp = () => {
           <div className="input-group">
             <label>Username</label>
             <input
+            id="username"
               type="text"
               name="name"
               placeholder="Enter your Username"
@@ -67,6 +68,7 @@ const SignUp = () => {
           <div className="input-group">
             <label>Password</label>
             <input
+            id="password"
               type="password"
               name="password"
               placeholder="Enter your Password"
@@ -78,6 +80,7 @@ const SignUp = () => {
           <div className="input-group">
             <label>Confirm Password</label>
             <input
+            id="confirmpassword"
               type="password"
               name="confirmPassword"
               placeholder="Confirm your Password"

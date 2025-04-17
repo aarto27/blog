@@ -1,11 +1,19 @@
 describe('login', () => {
     it('posts a blog', () => {
         cy.visit("http://localhost:5173/");
-
-        cy.wait(1000); 
-
+        cy.wait(1000);
+        cy.get("#username").type("NewUser");
+        cy.get("#password").type("123");
+        cy.get("#confirmpassword").type("123");
+        cy.get(".signup-btn").click();
+        cy.wait(1000);
+        cy.get("#Luser").type("NewUser");
+        cy.wait(1000);
+        cy.get("#Lpassword").type("123");
+        cy.wait(1000);
+        cy.get(".login-btn").click();
+        cy.wait(1000);
         cy.get("#title").type("React");
-
         const longContent = `useRef returns an object with a single property:
       current: Initially, it's set to the initialValue you have passed. You can later set it to something else.
        If you pass the ref object to React as a ref attribute to a JSX node, React will set its current property.
@@ -26,10 +34,15 @@ describe('login', () => {
         cy.get("#content").type(longContent, {
             delay: 3
         });
-
         cy.wait(1000);
         cy.get("#post").click();
         cy.wait(3000);
-        cy.get(".delete").eq(0).click("");
+        cy.get("#home").click();
+        cy.wait(3000);
+        cy.get("#delete").click();
+        cy.wait(1000);
+        cy.get(".go-blog-btn").click();
+        cy.wait(3000);
+        cy.get("#logout").click();
     });
 });

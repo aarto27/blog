@@ -56,6 +56,7 @@ const HomePage = () => {
             {userBlogs.map((blog) => (
               <div className="blog-card" key={blog.id}>
                 <i
+                id="delete"
                   onClick={() => handleDelete(blog.id)}
                   className="fa-solid fa-trash delete"
                 ></i>
